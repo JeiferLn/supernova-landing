@@ -2,22 +2,22 @@
 import { ArrowRight, CheckCircle, ChevronDown } from "@lucide/astro";
 
 const countries = [
-  "United States",
-  "United Kingdom",
-  "Canada",
-  "Germany",
-  "France",
+  "Estados Unidos",
+  "Reino Unido",
+  "Canadá",
+  "Alemania",
+  "Francia",
   "Australia",
-  "Japan",
+  "Japón",
 ];
 
 const businessTypes = [
-  "E-commerce Retail",
-  "SaaS / Digital Goods",
+  "Comercio electrónico / Retail",
+  "SaaS / Bienes digitales",
   "Marketplace",
-  "Travel & Hospitality",
-  "Gaming",
-  "Other",
+  "Viajes y hostelería",
+  "Videojuegos",
+  "Otro",
 ];
 ---
 
@@ -27,30 +27,30 @@ const businessTypes = [
   >
     <div class="mb-8">
       <h2 class="text-2xl font-bold text-slate-900">
-        Become a Merchant Partner
+        Conviértete en socio comercio
       </h2>
       <p class="mt-2 text-[#4946a0]">
-        Fill out the form below and our team will get back to you shortly.
+        Completa el formulario y nuestro equipo te responderá en breve.
       </p>
     </div>
 
     <form class="space-y-5" action="#" method="post">
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
         <label class="flex flex-col gap-1.5">
-          <span class="text-sm font-semibold text-slate-900">Full Name</span>
+          <span class="text-sm font-semibold text-slate-900">Nombre completo</span>
           <input
             type="text"
             name="fullName"
-            placeholder="John Doe"
+            placeholder="Juan Pérez"
             class="w-full rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-slate-900 shadow-sm transition-all placeholder:text-gray-400 focus:border-[#040167] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040167]"
           />
         </label>
         <label class="flex flex-col gap-1.5">
-          <span class="text-sm font-semibold text-slate-900">Company Name</span>
+          <span class="text-sm font-semibold text-slate-900">Nombre de la empresa</span>
           <input
             type="text"
             name="company"
-            placeholder="Supernova Inc."
+            placeholder="Supernova S.L."
             class="w-full rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-slate-900 shadow-sm transition-all placeholder:text-gray-400 focus:border-[#040167] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040167]"
           />
         </label>
@@ -58,16 +58,16 @@ const businessTypes = [
 
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
         <label class="flex flex-col gap-1.5">
-          <span class="text-sm font-semibold text-slate-900">Work Email</span>
+          <span class="text-sm font-semibold text-slate-900">Correo laboral</span>
           <input
             type="email"
             name="email"
-            placeholder="name@company.com"
+            placeholder="nombre@empresa.com"
             class="w-full rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-slate-900 shadow-sm transition-all placeholder:text-gray-400 focus:border-[#040167] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040167]"
           />
         </label>
         <label class="flex flex-col gap-1.5">
-          <span class="text-sm font-semibold text-slate-900">Phone Number</span>
+          <span class="text-sm font-semibold text-slate-900">Teléfono</span>
           <div class="flex rounded-lg shadow-sm">
             <select
               name="countryCode"
@@ -91,14 +91,14 @@ const businessTypes = [
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
         <label class="flex flex-col gap-1.5">
           <span class="text-sm font-semibold text-slate-900">
-            Country of Registration
+            País de registro
           </span>
           <div class="relative">
             <select
               name="country"
               class="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-slate-900 shadow-sm transition-all focus:border-[#040167] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040167]"
             >
-              <option value="" disabled selected>Select Country</option>
+              <option value="" disabled selected>Selecciona un país</option>
               {countries.map((c) => (
                 <option value={c}>{c}</option>
               ))}
@@ -113,14 +113,14 @@ const businessTypes = [
         </label>
         <label class="flex flex-col gap-1.5">
           <span class="text-sm font-semibold text-slate-900">
-            Type of Business
+            Tipo de negocio
           </span>
           <div class="relative">
             <select
               name="businessType"
               class="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-slate-900 shadow-sm transition-all focus:border-[#040167] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040167]"
             >
-              <option value="" disabled selected>Select Business Type</option>
+              <option value="" disabled selected>Selecciona el tipo de negocio</option>
               {businessTypes.map((type) => (
                 <option value={type}>{type}</option>
               ))}
@@ -136,11 +136,11 @@ const businessTypes = [
       </div>
 
       <label class="flex flex-col gap-1.5">
-        <span class="text-sm font-semibold text-slate-900">Message</span>
+        <span class="text-sm font-semibold text-slate-900">Mensaje</span>
         <textarea
           name="message"
           rows="4"
-          placeholder="Tell us more about your business needs..."
+          placeholder="Cuéntanos más sobre las necesidades de tu negocio..."
           class="w-full resize-none rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-slate-900 shadow-sm transition-all placeholder:text-gray-400 focus:border-[#040167] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040167]"
         />
       </label>
@@ -150,7 +150,7 @@ const businessTypes = [
           type="submit"
           class="group flex w-full items-center justify-center gap-2 rounded-lg bg-[#040167] px-6 py-4 text-base font-bold text-white shadow-md transition-all hover:bg-[#03004a] hover:shadow-lg active:scale-[0.98]"
         >
-          Become a Merchant
+          Conviértete en comercio
           <ArrowRight
             class="size-5 shrink-0 transition-transform group-hover:translate-x-1"
           />
@@ -160,7 +160,7 @@ const businessTypes = [
       <div class="flex items-center justify-center gap-2 pt-2">
         <CheckCircle class="size-5 shrink-0 text-[#4946a0]" />
         <p class="text-center text-xs text-[#4946a0]">
-          Your request will be sent to{" "}
+          Tu solicitud se enviará a{" "}
           <span class="font-medium text-slate-900"
             >pgateway@supernova-payments.com</span
           >
