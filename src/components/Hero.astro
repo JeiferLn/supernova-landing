@@ -1,0 +1,179 @@
+---
+import { ArrowRight, CircleCheck, DollarSign } from "@lucide/astro";
+---
+
+<section
+  class="relative overflow-hidden bg-white px-4 pt-16 pb-12 md:px-10 md:py-24"
+  aria-label="Hero"
+>
+  <!-- Blur circles de fondo -->
+  <div
+    class="pointer-events-none absolute top-0 right-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full bg-blue-50/50 blur-3xl"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="pointer-events-none absolute bottom-0 left-0 h-[600px] w-[600px] -translate-x-1/4 translate-y-1/3 rounded-full bg-slate-50 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 mx-auto flex max-w-[1280px] flex-col">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <!-- Columna izquierda: texto y CTAs -->
+      <div class="flex max-w-[640px] flex-col gap-8 text-left">
+        <div
+          class="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5"
+        >
+          <span
+            class="size-2 rounded-full bg-[#040167] animate-pulse"
+            aria-hidden="true"
+          ></span>
+          <span class="text-xs font-bold uppercase tracking-wide text-[#040167]">
+            Nuevo: pagos globales disponibles
+          </span>
+        </div>
+
+        <h1 class="text-5xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-6xl lg:text-[4rem]">
+          Supernova Payments:
+          <br />
+          <span class="text-gradient-hero">El futuro de la escalabilidad financiera</span>
+        </h1>
+
+        <p class="max-w-[580px] text-lg font-medium leading-relaxed text-slate-600 sm:text-xl">
+          Diseñado para la confianza, la seguridad y el alcance global. Ofrecemos la
+          infraestructura que impulsa a las empresas más ambiciosas del mundo.
+        </p>
+
+        <div class="mt-2 flex flex-col gap-4 sm:flex-row">
+          <a
+            href="#get-started"
+            class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-full bg-[#040167] px-8 py-3 h-12 text-base font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#03004a] hover:shadow-xl"
+          >
+            Empezar integración
+            <ArrowRight size={18} class="ml-1.5 shrink-0" />
+          </a>
+          <a
+            href="#contact"
+            class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-3 h-12 text-base font-bold text-slate-700 transition-all hover:border-slate-300 hover:bg-slate-50"
+          >
+            Contactar ventas
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-6 pt-6 text-sm font-medium text-slate-500">
+          <div class="flex items-center gap-2">
+            <CircleCheck size={20} class="shrink-0 text-green-600" />
+            <span>99.99% tiempo activo</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <CircleCheck size={20} class="shrink-0 text-green-600" />
+            <span>Certificado ISO 27001</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: mockup del dashboard -->
+      <div
+        class="relative flex w-full items-center justify-center"
+        style="perspective: 1000px"
+      >
+        <div
+          class="hero-dashboard group relative w-full overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 shadow-2xl transition-transform duration-700 ease-out"
+          style="aspect-ratio: 4/3"
+        >
+          <!-- Barra de ventana -->
+          <div class="flex h-14 items-center justify-between border-b border-slate-200 bg-white px-6">
+            <div class="flex gap-2">
+              <span class="size-3 rounded-full bg-red-400"></span>
+              <span class="size-3 rounded-full bg-amber-400"></span>
+              <span class="size-3 rounded-full bg-green-400"></span>
+            </div>
+            <div class="h-2 w-32 rounded-full bg-slate-100"></div>
+          </div>
+
+          <!-- Contenido del dashboard -->
+          <div class="grid h-[calc(100%-3.5rem)] grid-cols-3 gap-6 p-6">
+            <!-- Sidebar -->
+            <div class="col-span-1 hidden flex-col gap-4 border-r border-slate-100 pr-4 sm:flex">
+              <div class="mb-4 h-8 w-full rounded bg-[#040167]/10"></div>
+              <div class="h-4 w-3/4 rounded bg-slate-100"></div>
+              <div class="h-4 w-5/6 rounded bg-slate-100"></div>
+              <div class="h-4 w-4/5 rounded bg-slate-100"></div>
+            </div>
+
+            <!-- Área principal -->
+            <div class="col-span-3 flex flex-col gap-4 sm:col-span-2">
+              <div class="mb-2 flex items-end justify-between">
+                <div>
+                  <div class="mb-1 text-sm text-slate-400">Ingresos totales</div>
+                  <div class="text-3xl font-bold text-slate-800">$1.240.500,00</div>
+                </div>
+                <div class="rounded bg-green-50 px-2 py-1 text-sm font-bold text-green-500">
+                  +14.2%
+                </div>
+              </div>
+
+              <!-- Barras del gráfico -->
+              <div class="flex h-40 items-end justify-between gap-2">
+                <div class="h-[40%] w-full rounded-t bg-[#040167]/20"></div>
+                <div class="h-[65%] w-full rounded-t bg-[#040167]/30"></div>
+                <div class="h-[50%] w-full rounded-t bg-[#040167]/40"></div>
+                <div class="h-[80%] w-full rounded-t bg-[#040167]/60"></div>
+                <div
+                  class="hero-chart-bar h-[95%] w-full origin-bottom rounded-t bg-[#040167] shadow-lg shadow-[#040167]/20 transition-transform group-hover:scale-y-105"
+                ></div>
+                <div class="h-[70%] w-full rounded-t bg-[#040167]/50"></div>
+              </div>
+
+              <!-- Cards placeholder -->
+              <div class="mt-4 grid grid-cols-2 gap-4">
+                <div class="h-20 rounded-lg border border-slate-100 bg-white p-3 shadow-sm">
+                  <div class="mb-2 h-2 w-12 rounded bg-slate-100"></div>
+                  <div class="h-6 w-20 rounded bg-slate-200"></div>
+                </div>
+                <div class="h-20 rounded-lg border border-slate-100 bg-white p-3 shadow-sm">
+                  <div class="mb-2 h-2 w-12 rounded bg-slate-100"></div>
+                  <div class="h-6 w-20 rounded bg-slate-200"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notificación flotante: Pago recibido -->
+          <div
+            class="hero-notification absolute -bottom-3 right-0 flex items-center gap-3 rounded-xl border border-slate-100 bg-white p-4 shadow-xl"
+            style="animation-duration: 3s"
+          >
+            <div class="flex size-10 items-center justify-center rounded-full bg-green-100 text-green-600">
+              <DollarSign size={22} />
+            </div>
+            <div>
+              <div class="text-xs text-slate-500">Pago recibido</div>
+              <div class="text-sm font-bold text-slate-900">+$850,00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-dashboard {
+    transform: rotateX(5deg) rotateY(-5deg);
+  }
+  .hero-dashboard:hover {
+    transform: rotateX(0) rotateY(0);
+  }
+  .hero-notification {
+    animation: bounce 3s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+</style>

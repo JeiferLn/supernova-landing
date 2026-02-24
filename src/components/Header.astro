@@ -1,0 +1,222 @@
+---
+import {
+  ArrowRight,
+  Code2,
+  DollarSign,
+  Home,
+  LogIn,
+  Menu,
+  Store,
+  X,
+} from "@lucide/astro";
+
+const navItems = [
+  { href: "/", label: "Inicio", icon: Home },
+  { href: "#developers", label: "Desarrolladores", icon: Code2 },
+  { href: "#merchants", label: "Comerciantes", icon: Store },
+  { href: "#pricing", label: "Precios", icon: DollarSign },
+  { href: "#signin", label: "Iniciar sesión", icon: LogIn },
+];
+---
+
+<header class="sticky top-0 z-50 w-full bg-white shadow-sm" id="site-header">
+  <div
+    class="w-full mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4"
+  >
+    <a
+      href="/"
+      class="flex items-center gap-2 text-[#1e3a5f] font-semibold text-lg no-underline shrink-0"
+      aria-label="Supernova Payments - Inicio"
+    >
+      <span class="flex items-center justify-center">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          class="block"
+        >
+          <circle cx="16" cy="16" r="14" fill="#1e3a5f"></circle>
+          <path d="M16 10l6 10H10l6-10z" fill="#5b8fc9"></path>
+        </svg>
+      </span>
+
+      <span>
+        Supernova
+        <span class="font-medium text-[#4a6b8a]"> Payments </span>
+      </span>
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button
+      type="button"
+      class="lg:hidden flex items-center justify-center w-11 h-11 p-0 border-0 bg-transparent text-[#1e3a5f] cursor-pointer rounded-lg hover:bg-slate-100 transition-colors"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+      id="menu-toggle"
+    >
+      <Menu size={24} />
+    </button>
+
+    <!-- Backdrop -->
+    <div
+      id="nav-backdrop"
+      class="nav-backdrop fixed inset-0 z-40 bg-black/30 opacity-0 pointer-events-none transition-opacity duration-250 lg:hidden"
+      aria-hidden="true"
+    >
+    </div>
+
+    <!-- Drawer -->
+    <nav
+      class="nav-overlay fixed top-0 right-0 bottom-0 z-50 w-full md:w-[min(20rem,90vw)] bg-white shadow-xl overflow-y-auto pt-16 px-4 pb-6 transition-transform duration-250 ease-out lg:static lg:z-auto lg:w-auto lg:max-w-none lg:pt-0 lg:px-0 lg:pb-0 lg:bg-transparent lg:shadow-none lg:overflow-visible"
+      id="nav-menu"
+      aria-label="Navegación principal"
+    >
+      <!-- Header móvil -->
+      <div
+        class="lg:hidden absolute top-0 left-0 right-0 flex items-center justify-between px-4 py-3 bg-white border-b border-slate-200"
+      >
+        <a
+          href="/"
+          class="flex items-center gap-2 text-[#1e3a5f] font-semibold text-lg no-underline shrink-0"
+        >
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="14" fill="#1e3a5f"></circle>
+            <path d="M16 10l6 10H10l6-10z" fill="#5b8fc9"></path>
+          </svg>
+
+          Supernova
+          <span class="font-medium text-[#4a6b8a]"> Payments </span>
+        </a>
+
+        <button
+          type="button"
+          class="flex items-center justify-center w-11 h-11 bg-transparent text-[#1e3a5f] cursor-pointer rounded-lg hover:bg-slate-100 transition-colors menu-close-mobile"
+          aria-label="Cerrar menú"
+          id="menu-close-mobile"
+        >
+          <X size={24} />
+        </button>
+      </div>
+
+      <ul
+        class="list-none m-0 p-0 pt-4 flex flex-col lg:flex-row lg:items-center lg:gap-1 lg:pt-0"
+      >
+        {
+          navItems.map(({ href, label, icon: Icon }) => (
+            <li class="border-b border-slate-200 lg:border-0">
+              <a
+                href={href}
+                class="nav-link group flex items-center gap-3 lg:gap-0 py-3.5 px-3 -mx-3 rounded-xl text-slate-600 text-[15px] font-medium no-underline transition-colors lg:py-2 lg:px-3 lg:mx-0 lg:rounded-lg hover:text-[#1e3a5f] hover:bg-slate-100/80 lg:hover:bg-slate-100"
+              >
+                <span class="lg:hidden flex items-center justify-center w-9 h-9 rounded-lg bg-slate-100 text-slate-500 group-hover:bg-[#1e3a5f]/10 group-hover:text-[#1e3a5f] transition-colors shrink-0">
+                  <Icon size={18} />
+                </span>
+
+                <span>{label}</span>
+              </a>
+            </li>
+          ))
+        }
+
+        <li class="mt-4 lg:mt-0 lg:ml-2">
+          <a
+            href="#get-started"
+            class="nav-cta inline-flex items-center justify-center gap-2 w-full lg:w-auto bg-[#1e3a5f] text-white py-3 px-5 rounded-xl font-semibold text-[15px] no-underline hover:bg-[#2d4a6f] active:scale-[0.98] transition-all lg:py-2.5 lg:px-4 shadow-sm hover:shadow-md"
+          >
+            Comenzar
+            <ArrowRight size={18} class="shrink-0" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const closeMobile = document.getElementById("menu-close-mobile");
+  const backdrop = document.getElementById("nav-backdrop");
+  const nav = document.getElementById("nav-menu");
+
+  function openMenu() {
+    nav?.classList.add("nav-open");
+
+    backdrop?.classList.remove("opacity-0", "pointer-events-none");
+
+    backdrop?.setAttribute("aria-hidden", "false");
+
+    toggle?.setAttribute("aria-expanded", "true");
+
+    toggle?.classList.add("invisible", "pointer-events-none");
+
+    document.body.classList.add("menu-open");
+  }
+
+  function closeMenu() {
+    nav?.classList.remove("nav-open");
+
+    backdrop?.classList.add("opacity-0", "pointer-events-none");
+
+    backdrop?.setAttribute("aria-hidden", "true");
+
+    toggle?.setAttribute("aria-expanded", "false");
+
+    toggle?.classList.remove("invisible", "pointer-events-none");
+
+    document.body.classList.remove("menu-open");
+  }
+
+  toggle?.addEventListener("click", openMenu);
+
+  closeMobile?.addEventListener("click", closeMenu);
+
+  backdrop?.addEventListener("click", closeMenu);
+
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024) closeMenu();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+</script>
+
+<style>
+  .nav-overlay {
+    transform: translateX(100%);
+    will-change: transform;
+  }
+
+  .nav-overlay.nav-open {
+    transform: translateX(0);
+  }
+
+  @media (min-width: 1024px) {
+    .nav-overlay,
+    .nav-overlay.nav-open {
+      transform: none;
+    }
+  }
+
+  .menu-close-mobile {
+    display: flex;
+  }
+
+  @media (min-width: 1024px) {
+    .menu-close-mobile {
+      display: none;
+    }
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+</style>
