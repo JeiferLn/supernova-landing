@@ -16,129 +16,127 @@ import {
 >
   <div class="relative z-10 mx-auto flex max-w-[1280px] flex-col">
     <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-    <!-- Columna izquierda -->
-    <div class="flex flex-col gap-8">
-      <div
-        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 w-fit"
-      >
-        <Code2 class="size-4 text-[#040167]" />
-        <span
-          class="text-[#040167] text-xs font-bold uppercase tracking-wider"
-        >
-          Developer First
-        </span>
-      </div>
-
-      <div class="flex flex-col gap-4">
-        <h1
-          class="text-slate-900 text-4xl lg:text-6xl font-black leading-[1.1] tracking-[-0.033em]"
-        >
-          Powerful payments for modern apps
-        </h1>
-        <p
-          class="text-slate-600 text-lg lg:text-xl font-normal leading-relaxed max-w-[540px]"
-        >
-          Built for developers, by developers. Integrate seamless payments with
-          just a few lines of code. Get instant access to API keys, webhooks,
-          and sandbox environments.
-        </p>
-      </div>
-
-      <ul class="flex flex-col gap-4" role="list">
-        <li class="flex items-start gap-4">
-          <span
-            class="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-700"
-          >
-            <Check class="size-5" />
-          </span>
-          <div>
-            <h3 class="text-slate-900 font-bold text-lg">
-              Instant API Keys
-            </h3>
-            <p class="text-slate-600 text-sm">
-              Generate production and sandbox keys instantly from your
-              dashboard.
-            </p>
-          </div>
-        </li>
-        <li class="flex items-start gap-4">
-          <span
-            class="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700"
-          >
-            <Webhook class="size-5" />
-          </span>
-          <div>
-            <h3 class="text-slate-900 font-bold text-lg">
-              Real-time Webhooks
-            </h3>
-            <p class="text-slate-600 text-sm">
-              Listen to payment events in real-time to trigger fulfillment
-              workflows.
-            </p>
-          </div>
-        </li>
-      </ul>
-
-      <div class="flex flex-col gap-4 pt-4 lg:flex-row">
-        <a
-          href="#"
-          class="inline-flex w-full items-center justify-center gap-2 rounded-lg h-12 px-6 bg-[#040167] hover:bg-[#03004a] transition-all shadow-lg shadow-[#040167]/20 text-white text-base font-bold tracking-[0.015em] lg:w-auto lg:whitespace-nowrap"
-        >
-          <FileText class="size-5 shrink-0" />
-          <span>Download Technical Docs</span>
-        </a>
-        <a
-          href="#"
-          class="inline-flex w-full items-center justify-center gap-2 rounded-lg h-12 px-6 bg-white border border-slate-200 hover:border-[#040167]/50 hover:bg-slate-50 transition-all text-slate-900 text-base font-bold lg:w-auto lg:whitespace-nowrap"
-        >
-          <span>View API Reference</span>
-          <ArrowRight class="size-5 shrink-0" />
-        </a>
-      </div>
-    </div>
-
-    <!-- Columna derecha: code block + latency card -->
-    <div class="relative w-full">
-      <div
-        class="absolute -inset-4 bg-linear-to-r from-blue-100 to-indigo-100 rounded-2xl blur-xl opacity-70"
-        aria-hidden="true"
-      >
-      </div>
-      <div
-        class="relative bg-[#1e1e2e] rounded-xl shadow-2xl border border-slate-800 overflow-hidden font-mono text-sm leading-relaxed"
-      >
+      <!-- Columna izquierda -->
+      <div class="flex flex-col gap-8">
         <div
-          class="flex items-center justify-between px-4 py-3 bg-[#181825] border-b border-slate-700"
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 w-fit"
         >
-          <div class="flex items-center gap-2">
-            <span class="size-3 rounded-full bg-red-500"></span>
-            <span class="size-3 rounded-full bg-yellow-500"></span>
-            <span class="size-3 rounded-full bg-green-500"></span>
-          </div>
-          <span class="text-slate-400 text-xs">POST /v1/payments</span>
-          <button
-            type="button"
-            class="text-slate-500 hover:text-white cursor-pointer p-1 rounded"
-            aria-label="Copy code"
+          <Code2 class="size-4 text-[#040167]" />
+          <span
+            class="text-[#040167] text-xs font-bold uppercase tracking-wider"
           >
-            <Copy class="size-4" />
-          </button>
+            Developer First
+          </span>
         </div>
-        <div class="p-6 overflow-x-auto">
-          <pre
-            class="text-blue-300 m-0"
-            aria-label="Example cURL request"><code><span class="text-purple-400">curl</span> https://api.supernova.com/v1/payments \
+
+        <div class="flex flex-col gap-4">
+          <h1
+            class="text-slate-900 text-4xl lg:text-6xl font-black leading-[1.1] tracking-[-0.033em]"
+          >
+            Powerful payments for modern apps
+          </h1>
+          <p
+            class="text-slate-600 text-lg lg:text-xl font-normal leading-relaxed max-w-[540px]"
+          >
+            Built for developers, by developers. Integrate seamless payments
+            with just a few lines of code. Get instant access to API keys,
+            webhooks, and sandbox environments.
+          </p>
+        </div>
+
+        <ul class="flex flex-col gap-4" role="list">
+          <li class="flex items-start gap-4">
+            <span
+              class="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-700"
+            >
+              <Check class="size-5" />
+            </span>
+            <div>
+              <h3 class="text-slate-900 font-bold text-lg">Instant API Keys</h3>
+              <p class="text-slate-600 text-sm">
+                Generate production and sandbox keys instantly from your
+                dashboard.
+              </p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span
+              class="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700"
+            >
+              <Webhook class="size-5" />
+            </span>
+            <div>
+              <h3 class="text-slate-900 font-bold text-lg">
+                Real-time Webhooks
+              </h3>
+              <p class="text-slate-600 text-sm">
+                Listen to payment events in real-time to trigger fulfillment
+                workflows.
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="flex flex-col gap-4 pt-4 lg:flex-row">
+          <a
+            href="/"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-lg h-12 px-6 bg-[#040167] hover:bg-[#03004a] transition-all shadow-lg shadow-[#040167]/20 text-white text-base font-bold tracking-[0.015em] lg:w-auto lg:whitespace-nowrap"
+          >
+            <FileText class="size-5 shrink-0" />
+            <span>Download Technical Docs</span>
+          </a>
+          <a
+            href="/"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-lg h-12 px-6 bg-white border border-slate-200 hover:border-[#040167]/50 hover:bg-slate-50 transition-all text-slate-900 text-base font-bold lg:w-auto lg:whitespace-nowrap"
+          >
+            <span>View API Reference</span>
+            <ArrowRight class="size-5 shrink-0" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna derecha: code block + latency card -->
+      <div class="relative w-full">
+        <div
+          class="absolute -inset-4 bg-linear-to-r from-blue-100 to-indigo-100 rounded-2xl blur-xl opacity-70"
+          aria-hidden="true"
+        >
+        </div>
+        <div
+          class="relative bg-[#1e1e2e] rounded-xl shadow-2xl border border-slate-800 overflow-hidden font-mono text-sm leading-relaxed"
+        >
+          <div
+            class="flex items-center justify-between px-4 py-3 bg-[#181825] border-b border-slate-700"
+          >
+            <div class="flex items-center gap-2">
+              <span class="size-3 rounded-full bg-red-500"></span>
+              <span class="size-3 rounded-full bg-yellow-500"></span>
+              <span class="size-3 rounded-full bg-green-500"></span>
+            </div>
+            <span class="text-slate-400 text-xs">POST /v1/payments</span>
+            <button
+              type="button"
+              class="text-slate-500 hover:text-white cursor-pointer p-1 rounded"
+              aria-label="Copy code"
+            >
+              <Copy class="size-4" />
+            </button>
+          </div>
+          <div class="p-6 overflow-x-auto">
+            <pre
+              class="text-blue-300 m-0"
+              aria-label="Example cURL request"><code><span class="text-purple-400">curl</span> https://api.supernova.com/v1/payments \
   <span class="text-orange-400">-u</span> sk_test_your_api_key_here: \
   <span class="text-orange-400">-d</span> <span class="text-green-400">amount</span>=2000 \
   <span class="text-orange-400">-d</span> <span class="text-green-400">currency</span>=usd \
   <span class="text-orange-400">-d</span> <span class="text-green-400">payment_method</span>=pm_card_visa \
   <span class="text-orange-400">-d</span> <span class="text-green-400">confirmation_method</span>=automatic \
   <span class="text-orange-400">-d</span> <span class="text-green-400">description</span>="Software Subscription"</code></pre>
-          <div class="mt-6 pt-6 border-t border-slate-700/50">
-            <div class="text-slate-500 mb-2">// Response</div>
-            <pre
-              class="text-slate-300 m-0"
-              aria-label="Example JSON response"><code>{'{'}
+            <div class="mt-6 pt-6 border-t border-slate-700/50">
+              <div class="text-slate-500 mb-2">// Response</div>
+              <pre
+                class="text-slate-300 m-0"
+                aria-label="Example JSON response"><code>{'{'}
   <span class="text-blue-300">"id"</span>: <span class="text-green-400">"pi_3MtwBwLkdIwHu7ix28a3tqPa"</span>,
   <span class="text-blue-300">"object"</span>: <span class="text-green-400">"payment_intent"</span>,
   <span class="text-blue-300">"amount"</span>: <span class="text-yellow-300">2000</span>,
@@ -146,39 +144,33 @@ import {
   <span class="text-blue-300">"status"</span>: <span class="text-green-400">"succeeded"</span>,
   <span class="text-blue-300">"payment_method"</span>: <span class="text-green-400">"pm_1MtwBwLkdIwHu7ix28a3tqPa"</span>
 {'}'}</code></pre>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Tarjeta flotante Latency -->
-      <div
-        class="absolute -bottom-6 -right-6 z-10 hidden lg:block"
-        aria-label="Average latency"
-      >
+        <!-- Tarjeta flotante Latency -->
         <div
-          class="bg-white p-4 rounded-lg shadow-xl border border-slate-100 max-w-[240px]"
+          class="absolute -bottom-6 -right-6 z-10 hidden lg:block"
+          aria-label="Average latency"
         >
-          <div class="flex items-center gap-3 mb-2">
-            <span
-              class="bg-green-100 p-1.5 rounded-full text-green-600"
-            >
-              <Zap class="size-4" />
-            </span>
-            <span
-              class="text-xs font-bold text-slate-500 uppercase"
-            >
-              Latency
-            </span>
+          <div
+            class="bg-white p-4 rounded-lg shadow-xl border border-slate-100 max-w-[240px]"
+          >
+            <div class="flex items-center gap-3 mb-2">
+              <span class="bg-green-100 p-1.5 rounded-full text-green-600">
+                <Zap class="size-4" />
+              </span>
+              <span class="text-xs font-bold text-slate-500 uppercase">
+                Latency
+              </span>
+            </div>
+            <div class="text-2xl font-black text-slate-900">45ms</div>
+            <p class="text-xs text-slate-600 mt-1">
+              Global average response time
+            </p>
           </div>
-          <div class="text-2xl font-black text-slate-900">
-            45ms
-          </div>
-          <p class="text-xs text-slate-600 mt-1">
-            Global average response time
-          </p>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </section>
