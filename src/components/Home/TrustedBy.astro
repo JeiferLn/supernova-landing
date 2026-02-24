@@ -1,0 +1,43 @@
+---
+import { CreditCard, Gem, Landmark, ShoppingBag, Wallet } from "@lucide/astro";
+
+const partners = [
+  { name: "Stripe", icon: CreditCard, hoverColor: "text-[#635BFF]" },
+  { name: "Visa", icon: Landmark, hoverColor: "group-hover:text-[#1434CB]" },
+  { name: "Mastercard", icon: ShoppingBag, hoverColor: "group-hover:text-[#EB001B]" },
+  { name: "PayPal", icon: Wallet, hoverColor: "group-hover:text-[#003087]" },
+  { name: "Gemini", icon: Gem, hoverColor: "group-hover:text-[#040167]" },
+];
+---
+
+<section
+  class="border-y border-slate-100 bg-slate-50/80 py-10"
+  aria-label="Empresas que confían en nosotros"
+>
+  <div class="mx-auto max-w-[1280px] px-4 md:px-10">
+    <p class="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-slate-400">
+      Con la confianza de líderes de la industria en todo el mundo
+    </p>
+    <div
+      class="flex flex-wrap items-center justify-center gap-12 opacity-60 grayscale transition-all duration-500 md:gap-20 hover:grayscale-0"
+    >
+      {
+        partners.map(({ name, icon: Icon, hoverColor }) => (
+          <div
+            class="group flex cursor-default items-center gap-2 transition-colors"
+            role="img"
+            aria-label={name}
+          >
+            <Icon
+              size={28}
+              class={`shrink-0 text-slate-500 transition-colors ${hoverColor}`}
+            />
+            <span class="text-2xl font-bold text-slate-700 transition-colors group-hover:text-slate-900">
+              {name}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

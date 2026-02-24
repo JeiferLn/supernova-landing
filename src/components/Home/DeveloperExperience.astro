@@ -1,0 +1,62 @@
+---
+const languages = ["Node.js", "Python", "Ruby", "Go"];
+const codeSnippet = `<span class="text-purple-400">const</span> supernova <span class="text-purple-400">=</span> require(<span class="text-green-400">'supernova'</span>)(<span class="text-green-400">'sk_test_...'</span>);
+
+<span class="text-purple-400">const</span> session <span class="text-purple-400">= await</span> supernova.checkout.create({
+  payment_method_types: [<span class="text-green-400">'card'</span>],
+  line_items: [{
+    price: <span class="text-green-400">'price_1234'</span>,
+    quantity: <span class="text-amber-400">1</span>,
+  }],
+  mode: <span class="text-green-400">'payment'</span>,
+  success_url: <span class="text-green-400">'https://example.com/success'</span>,
+});`;
+---
+
+<section
+  class="border-t border-slate-100 bg-slate-50/80 py-20"
+  aria-labelledby="developer-experience-heading"
+>
+  <div class="mx-auto flex flex-col items-center gap-12 px-4 md:flex-row md:px-10">
+    <div class="flex-1 space-y-6">
+      <p class="text-sm font-bold uppercase tracking-widest text-[#040167]">
+        Experiencia de desarrollador
+      </p>
+      <h2
+        id="developer-experience-heading"
+        class="text-3xl font-bold text-slate-900 md:text-4xl"
+      >
+        Integra con unas pocas líneas de código
+      </h2>
+      <p class="text-lg text-slate-600">
+        Nuestras librerías están disponibles en los principales lenguajes. Nos obsesiona la experiencia del desarrollador para que puedas centrarte en tu producto.
+      </p>
+      <div class="flex flex-wrap gap-4 pt-4">
+        {
+          languages.map((lang) => (
+            <span
+              class="rounded border border-slate-100 bg-white px-3 py-2 font-mono text-sm font-bold text-slate-700 shadow-sm"
+            >
+              {lang}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="w-full flex-1">
+      <div class="relative overflow-hidden rounded-xl bg-[#1e293b] p-6 font-mono text-sm shadow-2xl">
+        <div class="mb-4 flex gap-2 border-b border-slate-700 pb-4">
+          <span class="size-3 rounded-full bg-red-500"></span>
+          <span class="size-3 rounded-full bg-amber-500"></span>
+          <span class="size-3 rounded-full bg-green-500"></span>
+        </div>
+        <pre class="m-0 text-slate-300" aria-label="Ejemplo de código"><code set:html={codeSnippet} /></pre>
+        <div
+          class="pointer-events-none absolute inset-0 bg-linear-to-t from-[#1e293b] via-transparent to-transparent opacity-50"
+          aria-hidden="true"
+        />
+      </div>
+    </div>
+  </div>
+</section>
