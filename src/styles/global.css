@@ -2,7 +2,7 @@
 
 @layer utilities {
   .text-gradient-hero {
-    background: linear-gradient(to right, #040167, #3b82f6);
+    background: linear-gradient(to right, #040066, #3b82f6);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

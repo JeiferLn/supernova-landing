@@ -8,13 +8,15 @@ import { ArrowRight, CircleCheck, DollarSign } from "@lucide/astro";
 >
   <!-- Blur circles de fondo -->
   <div
-    class="pointer-events-none absolute top-0 right-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full bg-blue-50/50 blur-3xl"
+    class="pointer-events-none absolute top-0 right-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full bg-[#040066]/5 blur-3xl"
     aria-hidden="true"
-  ></div>
+  >
+  </div>
   <div
     class="pointer-events-none absolute bottom-0 left-0 h-[600px] w-[600px] -translate-x-1/4 translate-y-1/3 rounded-full bg-slate-50 blur-3xl"
     aria-hidden="true"
-  ></div>
+  >
+  </div>
 
   <div class="relative z-10 mx-auto flex max-w-[1280px] flex-col">
     <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -24,29 +26,38 @@ import { ArrowRight, CircleCheck, DollarSign } from "@lucide/astro";
           class="inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5"
         >
           <span
-            class="size-2 rounded-full bg-[#040167] animate-pulse"
-            aria-hidden="true"
-          ></span>
-          <span class="text-xs font-bold uppercase tracking-wide text-[#040167]">
+            class="size-2 rounded-full bg-[#040066] animate-pulse"
+            aria-hidden="true"></span>
+          <span
+            class="text-xs font-bold uppercase tracking-wide text-[#040066]"
+          >
             Nuevo: pagos globales disponibles
           </span>
         </div>
 
-        <h1 class="text-5xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-6xl lg:text-[4rem]">
+        <h1
+          class="text-5xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-6xl lg:text-[4rem]"
+        >
           Supernova Payments:
           <br />
-          <span class="text-gradient-hero">El futuro de la escalabilidad financiera</span>
+          <span class="text-gradient-hero">
+            Infraestructura de pagos diseñada para escalar
+          </span>
         </h1>
 
-        <p class="max-w-[580px] text-lg font-medium leading-relaxed text-slate-600 sm:text-xl">
-          Diseñado para la confianza, la seguridad y el alcance global. Ofrecemos la
-          infraestructura que impulsa a las empresas más ambiciosas del mundo.
+        <p
+          class="max-w-[580px] text-lg font-medium leading-relaxed text-slate-600 sm:text-xl"
+        >
+          Activa una plataforma de pagos segura, flexible y preparada para
+          acompañar el crecimiento de tu negocio. Supernova Payments ofrece la
+          tecnología que conecta empresas con clientes en cualquier parte del
+          mundo.
         </p>
 
         <div class="mt-2 flex flex-col gap-4 sm:flex-row">
           <a
             href="#get-started"
-            class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-full bg-[#040167] px-8 py-3 h-12 text-base font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#03004a] hover:shadow-xl"
+            class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-full bg-[#040066] px-8 py-3 h-12 text-base font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#03004a] hover:shadow-xl"
           >
             Empezar integración
             <ArrowRight size={18} class="ml-1.5 shrink-0" />
@@ -59,7 +70,9 @@ import { ArrowRight, CircleCheck, DollarSign } from "@lucide/astro";
           </a>
         </div>
 
-        <div class="flex flex-wrap items-center gap-6 pt-6 text-sm font-medium text-slate-500">
+        <div
+          class="flex flex-wrap items-center gap-6 pt-6 text-sm font-medium text-slate-500"
+        >
           <div class="flex items-center gap-2">
             <CircleCheck size={20} class="shrink-0 text-green-600" />
             <span>99.99% tiempo activo</span>
@@ -81,7 +94,9 @@ import { ArrowRight, CircleCheck, DollarSign } from "@lucide/astro";
           style="aspect-ratio: 4/3"
         >
           <!-- Barra de ventana -->
-          <div class="flex h-14 items-center justify-between border-b border-slate-200 bg-white px-6">
+          <div
+            class="flex h-14 items-center justify-between border-b border-slate-200 bg-white px-6"
+          >
             <div class="flex gap-2">
               <span class="size-3 rounded-full bg-red-400"></span>
               <span class="size-3 rounded-full bg-amber-400"></span>
@@ -93,8 +108,10 @@ import { ArrowRight, CircleCheck, DollarSign } from "@lucide/astro";
           <!-- Contenido del dashboard -->
           <div class="grid h-[calc(100%-3.5rem)] grid-cols-3 gap-6 p-6">
             <!-- Sidebar -->
-            <div class="col-span-1 hidden flex-col gap-4 border-r border-slate-100 pr-4 sm:flex">
-              <div class="mb-4 h-8 w-full rounded bg-[#040167]/10"></div>
+            <div
+              class="col-span-1 hidden flex-col gap-4 border-r border-slate-100 pr-4 sm:flex"
+            >
+              <div class="mb-4 h-8 w-full rounded bg-[#040066]/10"></div>
               <div class="h-4 w-3/4 rounded bg-slate-100"></div>
               <div class="h-4 w-5/6 rounded bg-slate-100"></div>
               <div class="h-4 w-4/5 rounded bg-slate-100"></div>
@@ -104,33 +121,44 @@ import { ArrowRight, CircleCheck, DollarSign } from "@lucide/astro";
             <div class="col-span-3 flex flex-col gap-4 sm:col-span-2">
               <div class="mb-2 flex items-end justify-between">
                 <div>
-                  <div class="mb-1 text-sm text-slate-400">Ingresos totales</div>
-                  <div class="text-3xl font-bold text-slate-800">$1.240.500,00</div>
+                  <div class="mb-1 text-sm text-slate-400">
+                    Ingresos totales
+                  </div>
+                  <div class="text-3xl font-bold text-slate-800">
+                    $1.240.500,00
+                  </div>
                 </div>
-                <div class="rounded bg-green-50 px-2 py-1 text-sm font-bold text-green-500">
+                <div
+                  class="rounded bg-green-50 px-2 py-1 text-sm font-bold text-green-500"
+                >
                   +14.2%
                 </div>
               </div>
 
               <!-- Barras del gráfico -->
               <div class="flex h-40 items-end justify-between gap-2">
-                <div class="h-[40%] w-full rounded-t bg-[#040167]/20"></div>
-                <div class="h-[65%] w-full rounded-t bg-[#040167]/30"></div>
-                <div class="h-[50%] w-full rounded-t bg-[#040167]/40"></div>
-                <div class="h-[80%] w-full rounded-t bg-[#040167]/60"></div>
+                <div class="h-[40%] w-full rounded-t bg-[#040066]/20"></div>
+                <div class="h-[65%] w-full rounded-t bg-[#040066]/30"></div>
+                <div class="h-[50%] w-full rounded-t bg-[#040066]/40"></div>
+                <div class="h-[80%] w-full rounded-t bg-[#040066]/60"></div>
                 <div
-                  class="hero-chart-bar h-[95%] w-full origin-bottom rounded-t bg-[#040167] shadow-lg shadow-[#040167]/20 transition-transform group-hover:scale-y-105"
-                ></div>
-                <div class="h-[70%] w-full rounded-t bg-[#040167]/50"></div>
+                  class="hero-chart-bar h-[95%] w-full origin-bottom rounded-t bg-[#040066] shadow-lg shadow-[#040066]/20 transition-transform group-hover:scale-y-105"
+                >
+                </div>
+                <div class="h-[70%] w-full rounded-t bg-[#040066]/50"></div>
               </div>
 
               <!-- Cards placeholder -->
               <div class="mt-4 grid grid-cols-2 gap-4">
-                <div class="h-20 rounded-lg border border-slate-100 bg-white p-3 shadow-sm">
+                <div
+                  class="h-20 rounded-lg border border-slate-100 bg-white p-3 shadow-sm"
+                >
                   <div class="mb-2 h-2 w-12 rounded bg-slate-100"></div>
                   <div class="h-6 w-20 rounded bg-slate-200"></div>
                 </div>
-                <div class="h-20 rounded-lg border border-slate-100 bg-white p-3 shadow-sm">
+                <div
+                  class="h-20 rounded-lg border border-slate-100 bg-white p-3 shadow-sm"
+                >
                   <div class="mb-2 h-2 w-12 rounded bg-slate-100"></div>
                   <div class="h-6 w-20 rounded bg-slate-200"></div>
                 </div>
@@ -143,7 +171,9 @@ import { ArrowRight, CircleCheck, DollarSign } from "@lucide/astro";
             class="hero-notification absolute -bottom-3 right-0 flex items-center gap-3 rounded-xl border border-slate-100 bg-white p-4 shadow-xl"
             style="animation-duration: 3s"
           >
-            <div class="flex size-10 items-center justify-center rounded-full bg-green-100 text-green-600">
+            <div
+              class="flex size-10 items-center justify-center rounded-full bg-green-100 text-green-600"
+            >
               <DollarSign size={22} />
             </div>
             <div>

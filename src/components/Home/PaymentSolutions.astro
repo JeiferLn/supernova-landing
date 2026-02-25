@@ -1,12 +1,24 @@
 ---
-import { ArrowRight, BarChart3, Code2, Network, Store } from "@lucide/astro";
+import {
+  ArrowRight,
+  ChartColumn,
+  Code2,
+  Network,
+  Store,
+  Building,
+} from "@lucide/astro";
 
 const solutions = [
   {
     title: "Pasarela de pago",
     description:
-      "Acepta tarjetas, billeteras digitales y métodos locales de forma segura con nuestra API unificada. Incluye protección contra fraude e cumplimiento PCI.",
-    features: ["Más de 135 monedas soportadas", "Autenticación 3D Secure 2"],
+      "Acepta tarjetas, billeteras digitales y métodos de pago locales a través de una API unificada y segura.",
+    features: [
+      "Más de 135 monedas soportadas",
+      "Autenticación 3D Secure 2",
+      "Cumplimiento PCI DSS",
+      "Herramientas de prevención de fraude",
+    ],
     icon: Network,
     accentClass: "bg-blue-50",
   },
@@ -14,15 +26,25 @@ const solutions = [
     title: "Panel de comercio",
     description:
       "Tu centro de control para operaciones financieras. Crea enlaces de pago al instante, sigue ingresos en tiempo real y genera informes de conciliación detallados.",
-    features: ["Analíticas y gráficos en tiempo real", "Enlaces de pago sin código"],
-    icon: BarChart3,
+    features: [
+      "Visualización de transacciones",
+      "Creación de enlaces de pago sin código",
+      "Reportes y conciliaciones",
+      "Seguimiento de ingresos",
+    ],
+    icon: ChartColumn,
     accentClass: "bg-purple-50",
   },
   {
     title: "Integración API",
     description:
       "Infraestructura pensada para desarrolladores. Webhooks robustos, documentación clara y entornos en sandbox para estar operativo en minutos.",
-    features: ["99,999% SLA de disponibilidad API", "Librerías SDK completas"],
+    features: [
+      "SDK disponibles en múltiples lenguajes",
+      "Gestión de eventos en tiempo real",
+      "Entorno de pruebas completo",
+      "Arquitectura flexible",
+    ],
     icon: Code2,
     accentClass: "bg-emerald-50",
   },
@@ -30,9 +52,20 @@ const solutions = [
     title: "Servicio TPV",
     description:
       "Unifica ventas online y offline. Soluciones de terminal para tiendas físicas que se sincronizan con el inventario de tu panel digital.",
-    features: ["Contactless y chip", "Sincronización de inventario al instante"],
+    features: ["Pagos contactless y chip", "Sincronización en tiempo real", ""],
     icon: Store,
     accentClass: "bg-amber-50",
+  },
+  {
+    title: "Experiencia diseñada para empresas en crecimiento:",
+    features: [
+      "Tecnología robusta",
+      "Seguridad avanzada",
+      "Soporte especializado",
+      "Escalabilidad internacional",
+    ],
+    icon: Building,
+    accentClass: "bg-slate-100",
   },
 ];
 ---
@@ -42,7 +75,9 @@ const solutions = [
   aria-labelledby="payment-solutions-heading"
 >
   <div class="mx-auto flex max-w-[1280px] flex-col gap-16">
-    <div class="flex flex-col gap-6 border-b border-slate-100 pb-8 md:flex-row md:items-end md:justify-between">
+    <div
+      class="flex flex-col gap-6 border-b border-slate-100 pb-8 md:flex-row md:items-end md:justify-between"
+    >
       <div class="max-w-[600px]">
         <h2
           id="payment-solutions-heading"
@@ -51,12 +86,13 @@ const solutions = [
           Soluciones de pago completas
         </h2>
         <p class="text-lg text-slate-600">
-          Todo lo que necesitas para aceptar pagos y hacer crecer tu negocio, en una única plataforma.
+          Todo lo que necesitas para aceptar pagos, gestionar transacciones y
+          optimizar tus operaciones financieras desde una única plataforma.
         </p>
       </div>
       <a
         href="#products"
-        class="inline-flex w-fit items-center gap-1 font-bold text-[#040167] transition-all hover:gap-2"
+        class="inline-flex w-fit items-center gap-1 font-bold text-[#040066] transition-all hover:gap-2"
       >
         Ver todos los productos
         <ArrowRight size={16} class="shrink-0" />
@@ -65,33 +101,38 @@ const solutions = [
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       {
-        solutions.map(({ title, description, features, icon: Icon, accentClass }) => (
-          <article
-            class="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-8 transition-all duration-300 hover:border-slate-200 hover:shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)]"
-          >
-            <div
-              class={`absolute -mr-8 -mt-8 top-0 right-0 h-32 w-32 rounded-bl-full opacity-50 transition-transform group-hover:scale-110 ${accentClass}`}
-              aria-hidden="true"
-            />
-            <div class="relative z-10 flex flex-col gap-6">
-              <div class="flex size-14 shrink-0 items-center justify-center rounded-xl bg-[#040167]/5 text-[#040167] transition-colors duration-300 group-hover:bg-[#040167] group-hover:text-white">
-                <Icon size={28} />
+        solutions.map(
+          ({ title, description, features, icon: Icon, accentClass }) => (
+            <article class="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-8 transition-all duration-300 hover:border-slate-200 hover:shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)]">
+              <div
+                class={`absolute -mr-8 -mt-8 top-0 right-0 h-32 w-32 rounded-bl-full opacity-50 transition-transform group-hover:scale-110 ${accentClass}`}
+                aria-hidden="true"
+              />
+              <div class="relative z-10 flex flex-col gap-6">
+                <div class="flex size-14 shrink-0 items-center justify-center rounded-xl bg-[#040066]/5 text-[#040066] transition-colors duration-300 group-hover:bg-[#040066] group-hover:text-white">
+                  <Icon size={28} />
+                </div>
+                <div>
+                  <h3 class="mb-2 text-xl font-bold text-slate-900">{title}</h3>
+                  <p class="mb-4 leading-relaxed text-slate-600">
+                    {description}
+                  </p>
+                  <ul class="flex flex-col gap-2 text-sm text-slate-500">
+                    {features.map((feature) => (
+                      <li class="flex items-center gap-2">
+                        <span
+                          class="size-1.5 shrink-0 rounded-full bg-[#040066]"
+                          aria-hidden="true"
+                        />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div>
-                <h3 class="mb-2 text-xl font-bold text-slate-900">{title}</h3>
-                <p class="mb-4 leading-relaxed text-slate-600">{description}</p>
-                <ul class="flex flex-col gap-2 text-sm text-slate-500">
-                  {features.map((feature) => (
-                    <li class="flex items-center gap-2">
-                      <span class="size-1.5 shrink-0 rounded-full bg-[#040167]" aria-hidden="true" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </article>
-        ))
+            </article>
+          ),
+        )
       }
     </div>
   </div>
