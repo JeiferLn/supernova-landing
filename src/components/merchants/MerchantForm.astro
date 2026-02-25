@@ -27,7 +27,7 @@ const businessTypes = [
   >
     <div class="mb-8">
       <h2 class="text-2xl font-bold text-slate-900">
-        Conviértete en socio comercio
+        Conviértete en socio comerciante
       </h2>
       <p class="mt-2 text-[#4040a0]">
         Completa el formulario y nuestro equipo te responderá en breve.
@@ -37,7 +37,9 @@ const businessTypes = [
     <form class="space-y-5" action="#" method="post">
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
         <label class="flex flex-col gap-1.5">
-          <span class="text-sm font-semibold text-slate-900">Nombre completo</span>
+          <span class="text-sm font-semibold text-slate-900"
+            >Nombre completo</span
+          >
           <input
             type="text"
             name="fullName"
@@ -46,7 +48,9 @@ const businessTypes = [
           />
         </label>
         <label class="flex flex-col gap-1.5">
-          <span class="text-sm font-semibold text-slate-900">Nombre de la empresa</span>
+          <span class="text-sm font-semibold text-slate-900"
+            >Nombre de la empresa</span
+          >
           <input
             type="text"
             name="company"
@@ -58,7 +62,9 @@ const businessTypes = [
 
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
         <label class="flex flex-col gap-1.5">
-          <span class="text-sm font-semibold text-slate-900">Correo laboral</span>
+          <span class="text-sm font-semibold text-slate-900"
+            >Correo laboral</span
+          >
           <input
             type="email"
             name="email"
@@ -68,24 +74,77 @@ const businessTypes = [
         </label>
         <label class="flex flex-col gap-1.5">
           <span class="text-sm font-semibold text-slate-900">Teléfono</span>
-          <div class="flex rounded-lg shadow-sm">
+          <div
+            class="flex rounded-lg shadow-sm border border-gray-200 overflow-hidden focus-within:border-[#040066] focus-within:ring-1 focus-within:ring-[#040066]"
+          >
             <select
-              name="countryCode"
-              class="w-[80px] rounded-l-lg border border-r-0 border-gray-200 bg-gray-50/50 px-3 py-3 text-sm text-slate-900 transition-all focus:border-[#040066] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040066]"
+              id="phonePrefix"
+              aria-label="Prefijo de país"
+              class="min-w-[96px] shrink-0 border-r border-gray-200 bg-gray-50/50 pl-3 pr-10 py-3 text-sm text-slate-900 transition-all focus:border-[#040066] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040066] [&::-ms-expand]:hidden appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m6%209%206%206%206-6%22%2F%3E%3C%2Fsvg%3E')] bg-size-[1.25rem] bg-position-[right_0.5rem_center] bg-no-repeat"
             >
-              <option value="US">US</option>
-              <option value="UK">UK</option>
-              <option value="CA">CA</option>
-              <option value="EU">EU</option>
+              <option value="+53">CU</option>
+              <option value="+57">CO</option>
             </select>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="+1 (555) 000-0000"
-              class="flex-1 rounded-r-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-slate-900 transition-all placeholder:text-gray-400 focus:border-[#040066] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040066]"
-            />
+            <div class="flex flex-1 min-w-0 bg-gray-50/50">
+              <span
+                id="phonePrefixDisplay"
+                class="flex items-center pl-4 pr-1 py-3 text-slate-900 bg-transparent shrink-0 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                +53
+              </span>
+              <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="5 123 4567"
+                inputmode="numeric"
+                pattern="[0-9\s\-]*"
+                class="flex-1 min-w-0 border-0 bg-transparent pl-0 pr-4 py-3 text-slate-900 placeholder:text-gray-400 focus:outline-none focus:ring-0"
+              />
+            </div>
+            <input type="hidden" name="phone" id="phoneFull" />
           </div>
         </label>
+
+        <script>
+          const prefixSelect = document.getElementById(
+            "phonePrefix",
+          ) as HTMLSelectElement;
+          const prefixDisplay = document.getElementById(
+            "phonePrefixDisplay",
+          ) as HTMLSpanElement;
+          const phoneInput = document.getElementById(
+            "phoneNumber",
+          ) as HTMLInputElement;
+          const phoneFull = document.getElementById(
+            "phoneFull",
+          ) as HTMLInputElement;
+
+          function updatePrefix() {
+            const prefix = prefixSelect.value;
+            prefixDisplay.textContent = prefix;
+            phoneInput.placeholder =
+              prefix === "+53" ? "5 123 4567" : "300 123 4567";
+          }
+
+          function updateFullPhone() {
+            const prefix = prefixSelect.value;
+            const number = phoneInput.value
+              .replace(/\s/g, "")
+              .replace(/-/g, "");
+            phoneFull.value = number ? `${prefix}${number}` : "";
+          }
+
+          prefixSelect?.addEventListener("change", updatePrefix);
+          phoneInput?.addEventListener("input", updateFullPhone);
+          phoneInput?.addEventListener("blur", updateFullPhone);
+
+          document
+            .querySelector("form")
+            ?.addEventListener("submit", updateFullPhone);
+
+          updatePrefix();
+        </script>
       </div>
 
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -99,9 +158,7 @@ const businessTypes = [
               class="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-slate-900 shadow-sm transition-all focus:border-[#040066] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040066]"
             >
               <option value="" disabled selected>Selecciona un país</option>
-              {countries.map((c) => (
-                <option value={c}>{c}</option>
-              ))}
+              {countries.map((c) => <option value={c}>{c}</option>)}
             </select>
             <span
               class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
@@ -120,10 +177,14 @@ const businessTypes = [
               name="businessType"
               class="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-slate-900 shadow-sm transition-all focus:border-[#040066] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040066]"
             >
-              <option value="" disabled selected>Selecciona el tipo de negocio</option>
-              {businessTypes.map((type) => (
-                <option value={type}>{type}</option>
-              ))}
+              <option value="" disabled selected
+                >Selecciona el tipo de negocio</option
+              >
+              {
+                businessTypes.map((type) => (
+                  <option value={type}>{type}</option>
+                ))
+              }
             </select>
             <span
               class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
@@ -142,7 +203,7 @@ const businessTypes = [
           rows="4"
           placeholder="Cuéntanos más sobre las necesidades de tu negocio..."
           class="w-full resize-none rounded-lg border border-gray-200 bg-gray-50/50 px-4 py-3 text-slate-900 shadow-sm transition-all placeholder:text-gray-400 focus:border-[#040066] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#040066]"
-        />
+        ></textarea>
       </label>
 
       <div class="pt-2">
@@ -150,7 +211,7 @@ const businessTypes = [
           type="submit"
           class="group flex w-full items-center justify-center gap-2 rounded-lg bg-[#040066] px-6 py-4 text-base font-bold text-white shadow-md transition-all hover:bg-[#03004a] hover:shadow-lg active:scale-[0.98]"
         >
-          Conviértete en comercio
+          Conviértete en comerciante
           <ArrowRight
             class="size-5 shrink-0 transition-transform group-hover:translate-x-1"
           />

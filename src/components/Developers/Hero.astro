@@ -5,6 +5,7 @@ import {
   Code2,
   Copy,
   FileText,
+  FlaskConical,
   Webhook,
   Zap,
 } from "@lucide/astro";
@@ -38,9 +39,14 @@ import {
           <p
             class="text-slate-600 text-lg lg:text-xl font-normal leading-relaxed max-w-[540px]"
           >
-            Hecho por desarrolladores, para desarrolladores. Integra pagos sin
-            fricciones con pocas líneas de código. Acceso instantáneo a claves
-            API, webhooks y entornos de pruebas.
+            Construido por ingenieros, para equipos técnicos que necesitan
+            velocidad, control y estabilidad.
+          </p>
+          <p
+            class="text-slate-600 text-lg lg:text-xl font-normal leading-relaxed max-w-[540px]"
+          >
+            Integra pagos sin fricciones con una API clara, consistente y
+            preparada para escalar desde el primer día.
           </p>
         </div>
 
@@ -52,9 +58,11 @@ import {
               <Check class="size-5" />
             </span>
             <div>
-              <h3 class="text-slate-900 font-bold text-lg">Claves API al instante</h3>
+              <h3 class="text-slate-900 font-bold text-lg">
+                Claves API al instante
+              </h3>
               <p class="text-slate-600 text-sm">
-                Genera claves de producción y de pruebas al instante desde tu
+                Genera claves de producción y pruebas directamente desde tu
                 panel.
               </p>
             </div>
@@ -70,8 +78,22 @@ import {
                 Webhooks en tiempo real
               </h3>
               <p class="text-slate-600 text-sm">
-                Escucha eventos de pago en tiempo real para activar flujos de
-                cumplimiento.
+                Recibe notificaciones instantáneas sobre eventos de pago.
+              </p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span
+              class="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700"
+            >
+              <FlaskConical class="size-5" />
+            </span>
+            <div>
+              <h3 class="text-slate-900 font-bold text-lg">
+                Entorno sandbox completo
+              </h3>
+              <p class="text-slate-600 text-sm">
+                Simula pagos y validaciones antes de producción.
               </p>
             </div>
           </li>
@@ -79,14 +101,14 @@ import {
 
         <div class="flex flex-col gap-4 pt-4 lg:flex-row">
           <a
-            href="/"
+            href="https://sp-qa.supernova-payments.com/docs/api#/"
             class="inline-flex w-full items-center justify-center gap-2 rounded-lg h-12 px-6 bg-[#040066] hover:bg-[#03004a] transition-all shadow-lg shadow-[#040066]/20 text-white text-base font-bold tracking-[0.015em] lg:w-auto lg:whitespace-nowrap"
           >
             <FileText class="size-5 shrink-0" />
             <span>Descargar documentación técnica</span>
           </a>
           <a
-            href="/"
+            href="https://sp-qa.supernova-payments.com/docs/api#/"
             class="inline-flex w-full items-center justify-center gap-2 rounded-lg h-12 px-6 bg-white border border-slate-200 hover:border-[#040066]/50 hover:bg-slate-50 transition-all text-slate-900 text-base font-bold lg:w-auto lg:whitespace-nowrap"
           >
             <span>Ver referencia de la API</span>
@@ -113,7 +135,9 @@ import {
               <span class="size-3 rounded-full bg-yellow-500"></span>
               <span class="size-3 rounded-full bg-green-500"></span>
             </div>
-            <span class="text-slate-400 text-xs">POST /v1/payments</span>
+            <span class="text-slate-400 text-xs"
+              >Ejemplo de creación de pago: POST /v1/payments</span
+            >
             <button
               type="button"
               class="text-slate-500 hover:text-white cursor-pointer p-1 rounded"
@@ -129,7 +153,7 @@ import {
   <span class="text-orange-400">-u</span> sk_test_your_api_key_here: \
   <span class="text-orange-400">-d</span> <span class="text-green-400">amount</span>=2000 \
   <span class="text-orange-400">-d</span> <span class="text-green-400">currency</span>=usd \
-  <span class="text-orange-400">-d</span> <span class="text-green-400">payment_method</span>=pm_card_visa \
+  <span class="text-orange-400">-d</span> <span class="text-green-400">payment_method</span>=card \
   <span class="text-orange-400">-d</span> <span class="text-green-400">confirmation_method</span>=automatic \
   <span class="text-orange-400">-d</span> <span class="text-green-400">description</span>="Software Subscription"</code></pre>
             <div class="mt-6 pt-6 border-t border-slate-700/50">
@@ -137,12 +161,11 @@ import {
               <pre
                 class="text-slate-300 m-0"
                 aria-label="Ejemplo de respuesta JSON"><code>{'{'}
-  <span class="text-blue-300">"id"</span>: <span class="text-green-400">"pi_3MtwBwLkdIwHu7ix28a3tqPa"</span>,
-  <span class="text-blue-300">"object"</span>: <span class="text-green-400">"payment_intent"</span>,
+  <span class="text-blue-300">"id"</span>: <span class="text-green-400">"pay_3MtwBwLkdIwHu7ix28a3tqPa"</span>,
+  <span class="text-blue-300">"object"</span>: <span class="text-green-400">"payment"</span>,
   <span class="text-blue-300">"amount"</span>: <span class="text-yellow-300">2000</span>,
   <span class="text-blue-300">"currency"</span>: <span class="text-green-400">"usd"</span>,
-  <span class="text-blue-300">"status"</span>: <span class="text-green-400">"succeeded"</span>,
-  <span class="text-blue-300">"payment_method"</span>: <span class="text-green-400">"pm_1MtwBwLkdIwHu7ix28a3tqPa"</span>
+  <span class="text-blue-300">"status"</span>: <span class="text-green-400">"succeeded"</span>
 {'}'}</code></pre>
             </div>
           </div>
@@ -161,12 +184,11 @@ import {
                 <Zap class="size-4" />
               </span>
               <span class="text-xs font-bold text-slate-500 uppercase">
-                Latency
+                Rendimiento optimizado
               </span>
             </div>
-            <div class="text-2xl font-black text-slate-900">45ms</div>
-            <p class="text-xs text-slate-600 mt-1">
-              Tiempo de respuesta medio global
+            <p class="text-sm text-slate-600 mt-1">
+              Infraestructura diseñada para baja latencia y alta disponibilidad.
             </p>
           </div>
         </div>

@@ -1,33 +1,45 @@
 ---
 import {
   ChartColumn,
-  BookOpen,
+  Key,
   Shield,
+  Webhook,
+  FlaskConical,
 } from "@lucide/astro";
 
-const features = [
+const infrastructureFeatures = [
   {
-    title: "SDKs completos",
+    title: "Claves API al instante",
     description:
-      "Librerías oficiales para Node.js, Python, Ruby, PHP y Go para empezar en minutos.",
-    icon: BookOpen,
-    iconBg: "bg-[#040066]/10 text-[#040066]",
-    badges: ["Node.js", "Python", "Go"],
+      "Genera claves de producción y pruebas directamente desde tu panel.",
+    icon: Key,
   },
   {
-    title: "Protección contra fraude",
+    title: "Webhooks en tiempo real",
     description:
-      "Modelos de aprendizaje automático entrenados con miles de millones de datos para detectar fraude automáticamente.",
-    icon: Shield,
-    iconBg: "bg-[#040066]/10 text-[#040066]",
+      "Recibe notificaciones instantáneas sobre eventos de pago.",
+    icon: Webhook,
   },
   {
-    title: "Analíticas detalladas",
+    title: "Entorno sandbox completo",
     description:
-      "Obtén información sobre tus ingresos, el comportamiento de los clientes y las tasas de éxito de pagos con nuestro panel.",
-    icon: ChartColumn,
-    iconBg: "bg-[#040066]/10 text-[#040066]",
+      "Simula pagos y validaciones antes de producción.",
+    icon: FlaskConical,
   },
+];
+
+const securityItems = [
+  "Validación 3D Secure 2",
+  "Monitorización de patrones sospechosos",
+  "Gestión de listas de riesgo",
+  "Configuración personalizada de reglas",
+];
+
+const analyticsItems = [
+  "Ingresos en tiempo real",
+  "Tasa de aprobación",
+  "Historial detallado",
+  "Exportación de reportes",
 ];
 ---
 
@@ -40,47 +52,70 @@ const features = [
       id="features-heading"
       class="text-slate-900 text-3xl font-black tracking-tight"
     >
-      Todo lo que necesitas para crear flujos a medida
+      Infraestructura lista para desarrollar
     </h2>
-    <p class="text-slate-600 max-w-2xl mx-auto">
-      Nuestra API está diseñada para ser intuitiva y potente, manejando la
-      complejidad de los pagos para que te centres en tu producto.
-    </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
     {
-      features.map((feature) => {
+      infrastructureFeatures.map((feature) => {
         const Icon = feature.icon;
         return (
           <article
             class="group flex flex-col p-8 rounded-2xl bg-slate-50 hover:bg-white border border-transparent hover:border-slate-200 hover:shadow-xl transition-all duration-300"
           >
             <div
-              class={`mb-6 flex size-12 shrink-0 items-center justify-center rounded-lg ${feature.iconBg}`}
+              class="mb-6 flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#040066]/10 text-[#040066]"
             >
               <Icon class="size-6" />
             </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">
-            {feature.title}
-          </h3>
-          <p class="text-slate-600 leading-relaxed mb-6">
-            {feature.description}
-          </p>
-          {feature.badges && (
-            <div class="mt-auto flex flex-wrap gap-2">
-              {feature.badges.map((badge) => (
-                <span
-                  class="rounded-md bg-slate-200/80 px-2.5 py-1 font-mono text-sm font-medium text-slate-700"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
-          )}
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              {feature.title}
+            </h3>
+            <p class="text-slate-600 leading-relaxed">
+              {feature.description}
+            </p>
           </article>
         );
       })
     }
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <article
+      class="flex flex-col p-8 rounded-2xl bg-slate-50 hover:bg-white border border-transparent hover:border-slate-200 hover:shadow-xl transition-all duration-300"
+    >
+      <div
+        class="mb-6 flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#040066]/10 text-[#040066]"
+      >
+        <Shield class="size-6" />
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-3">
+        Seguridad y prevención de fraude
+      </h3>
+      <ul class="text-slate-600 leading-relaxed list-disc list-inside space-y-2">
+        {securityItems.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </article>
+
+    <article
+      class="flex flex-col p-8 rounded-2xl bg-slate-50 hover:bg-white border border-transparent hover:border-slate-200 hover:shadow-xl transition-all duration-300"
+    >
+      <div
+        class="mb-6 flex size-12 shrink-0 items-center justify-center rounded-lg bg-[#040066]/10 text-[#040066]"
+      >
+        <ChartColumn class="size-6" />
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-3">
+        Analíticas y control
+      </h3>
+      <ul class="text-slate-600 leading-relaxed list-disc list-inside space-y-2 grid grid-cols-1 md:grid-cols-2 gap-x-8">
+        {analyticsItems.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </article>
   </div>
 </section>
