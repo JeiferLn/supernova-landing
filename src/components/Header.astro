@@ -15,7 +15,7 @@ const navItems = [
   { href: "/developers", label: "Desarrolladores", icon: Code2 },
   { href: "/merchants", label: "Comerciantes", icon: Store },
   { href: "/pricing", label: "Precios", icon: DollarSign },
-  { href: "https://sp-qa.supernova-payments.com/login", label: "Iniciar sesión", icon: LogIn },
+  { href: "https://sp-qa.supernova-payments.com/login", target: "_blank", label: "Iniciar sesión", icon: LogIn },
 ];
 ---
 
@@ -98,10 +98,11 @@ const navItems = [
         class="list-none m-0 p-0 pt-4 flex flex-col lg:flex-row lg:items-center lg:gap-1 lg:pt-0"
       >
         {
-          navItems.map(({ href, label, icon: Icon }) => (
+          navItems.map(({ href, target, label, icon: Icon }) => (
             <li class="border-b border-slate-200 lg:border-0">
               <a
                 href={href}
+                target={target}
                 class="nav-link group flex items-center gap-3 lg:gap-0 py-3.5 px-3 -mx-3 rounded-xl text-slate-600 text-[15px] font-medium no-underline transition-colors lg:py-2 lg:px-3 lg:mx-0 lg:rounded-lg hover:text-[#040066] hover:bg-slate-100/80 lg:hover:bg-slate-100"
               >
                 <span class="lg:hidden flex items-center justify-center w-9 h-9 rounded-lg bg-slate-100 text-slate-500 group-hover:bg-[#040066]/10 group-hover:text-[#040066] transition-colors shrink-0">
